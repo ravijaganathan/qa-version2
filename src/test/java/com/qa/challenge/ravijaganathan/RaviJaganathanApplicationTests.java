@@ -9,11 +9,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class RaviJaganathanApplicationTests {
 
-	String[] args = {};
-
 	@Test
 	public void contextLoads() {
-		RaviJaganathanApplication.main( args);
+		RaviJaganathanApplication.main( new String[]{});
 	}
 
+	@Test
+	public void addAccount_Test() throws NoSuchMethodException {
+		throw new NoSuchMethodException();
+	}
 }

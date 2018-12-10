@@ -24,4 +24,9 @@ public class AccountRepositoryTest {
         List<Account> accountList = (List<Account>) accountRepository.findAll();
         assertThat(accountList).hasSize(0);
     }
+
+    @Test
+    public void AddAccount_Test() throws NoSuchMethodException {
+        throw new NoSuchMethodException();
+    }
 }

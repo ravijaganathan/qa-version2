@@ -1,5 +1,6 @@
 package com.qa.challenge.ravijaganathan;
 
+import com.qa.challenge.ravijaganathan.model.entitiy.Account;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,8 +15,5 @@ public class RaviJaganathanApplicationTests {
 		RaviJaganathanApplication.main( new String[]{});
 	}
 
-	@Test
-	public void addAccount_Test() throws NoSuchMethodException {
-		throw new NoSuchMethodException();
-	}
+
 }

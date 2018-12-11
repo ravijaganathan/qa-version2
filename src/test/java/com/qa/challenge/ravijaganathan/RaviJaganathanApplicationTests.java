@@ -16,4 +16,8 @@ public class RaviJaganathanApplicationTests {
 	}
 
 
+	@Test
+	public void service_findAll_Accounts_Test() throws NoSuchMethodException {
+		throw new NoSuchMethodException();
+	}
 }

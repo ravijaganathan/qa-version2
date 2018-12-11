@@ -57,5 +57,9 @@ public class AccountRestControllerTest {
 
 
 
+    @Test
+    public void deleteAccount_controller_test() throws NoSuchMethodException,Exception {
+        throw new NoSuchMethodException();
+    }
 
 }

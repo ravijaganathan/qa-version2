@@ -34,7 +34,6 @@ public class AccountServiceTest {
 
     @Test
     public void createAccount_Test() throws NoSuchMethodException {
-//         Mockito.when(accountRepository.findById((long)1)).thenReturn(java.util.Optional.ofNullable(mockedTestData.getDummyAccount()));
         Account account = new Account();
 
         account.setFirstName("Ravi");

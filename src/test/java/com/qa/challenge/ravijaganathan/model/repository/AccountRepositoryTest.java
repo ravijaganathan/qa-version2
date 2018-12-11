@@ -59,4 +59,10 @@ public class AccountRepositoryTest {
 
     }
 
+    @Test
+    public void DeleteAccount_Test() throws NoSuchMethodException {
+        throw new NoSuchMethodException();
+    }
+
+
 }

@@ -15,9 +15,4 @@ public class RaviJaganathanApplicationTests {
 	}
 
 
-	@Test
-	public void deleteAccount() throws NoSuchMethodException {
-		throw new NoSuchMethodException();
-	}
-
 }

@@ -4,6 +4,7 @@ import com.qa.challenge.ravijaganathan.model.entitiy.Account;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class MockedTestData {
     List<Account> accountList = new ArrayList<>();
@@ -24,6 +25,8 @@ public class MockedTestData {
         this.accountList.add(account);
     }
 
+
+
     public List<Account> getAccountList() {
         return accountList;
     }
@@ -32,8 +35,13 @@ public class MockedTestData {
         this.accountList = accountList;
     }
 
-    public Account getAccount() {
-        return account;
+    public Account getDummyAccount() {
+        Account dummyAccount = new Account();
+        dummyAccount.setId((long)5);
+        dummyAccount.setFirstName("Ravi");
+        dummyAccount.setLastName("Jaganathan");
+        dummyAccount.setAccountNumber("5896");
+        return dummyAccount;
     }
 
     public void setAccount(Account account) {

@@ -12,7 +12,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -42,5 +42,11 @@ public class AccountServiceTest {
         when(accountRepository.save(account)).thenReturn(account);
 
         assertThat(accountService.addAccount(account)).isEqualTo(account);
+    }
+
+    @Test
+    public void deleteAccount() throws NoSuchMethodException {
+        accountService.deleteAccount((long) 1);
+        verify(accountRepository,times(1)).deleteById((long)1);
     }
 }

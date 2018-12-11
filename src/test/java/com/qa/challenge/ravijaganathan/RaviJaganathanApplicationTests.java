@@ -15,4 +15,8 @@ public class RaviJaganathanApplicationTests {
 	}
 
 
+	@Test
+    public void createAccount_controller_test() throws NoSuchMethodException {
+	    throw new NoSuchMethodException();
+    }
 }

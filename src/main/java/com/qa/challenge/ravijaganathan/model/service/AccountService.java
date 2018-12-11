@@ -23,5 +23,10 @@ public class AccountService {
         return returnList;
     }
 
+    public Account addAccount(Account account){
+        return accountRepository.save(account);
+    }
+
+
 
 }

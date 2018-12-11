@@ -53,19 +53,10 @@ public class AccountRepositoryTest {
         accountList = (List<Account>) accountRepository.findAll();
 
         assertThat(accountList).hasSize(1);
-    }
-
-
-    @Test
-    public void duplicate_AddAccount_Test(){
-        AddAccount_Test();
-        accountRepository.save(challengeTestUtils.getFirst_TestAccount());
-        accountList = (List<Account>) accountRepository.findAll();
-
-        assertThat(accountList).hasSize(2);
+        assertThat(accountList.get(0).getFirstName()).isEqualTo("John");
+        assertThat(accountList.get(0).getLastName()).isEqualTo("Doe");
+        assertThat(accountList.get(0).getAccountNumber()).isEqualTo("1234");
 
     }
-
-
 
 }

@@ -9,20 +9,19 @@ public class MockedTestData {
     List<Account> accountList = new ArrayList<>();
     Account account = new Account();
     public MockedTestData(){
-        account.setFirstName("Ravi");
-        account.setLastName("Jaganathan");
-        account.setAccountNumber("1234");
-        accountList.add(account);
-        account.setFirstName("Suresh");
-        account.setLastName("Jaganathan");
-        account.setAccountNumber("4321");
-        accountList.add(account);
-        account.setFirstName("Santander");
-        account.setLastName("Spain");
-        account.setAccountNumber("1589");
-        accountList.add(account);
+        add2AccountList((long) 1,"First","TestUser","1234");
+        add2AccountList((long)2,"Second","UserTest","1423");
+        add2AccountList((long)3,"Third","TestUser","1324");
+        add2AccountList((long)4,"Fourth","UserTest","2134");
+    }
 
+    public void add2AccountList(Long id,String firstName,String lastName,String accountNumber){
+        account.setId(id);
+        account.setFirstName(firstName);
+        account.setLastName(lastName);
+        account.setAccountNumber(accountNumber);
 
+        this.accountList.add(account);
     }
 
     public List<Account> getAccountList() {

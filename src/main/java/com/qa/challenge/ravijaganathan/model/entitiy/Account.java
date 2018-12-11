@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class Account {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     public Long id;
 
     @Column(name = "FIRST_NAME")
@@ -19,7 +19,7 @@ public class Account {
     @Column(name = "LAST_NAME")
     public String lastName;
 
-    @Column(name = "ACCOUNT_NUMBER")
+    @Column(name = "ACCOUNT_NUMBER",unique = true)
     public String AccountNumber;
 
 }

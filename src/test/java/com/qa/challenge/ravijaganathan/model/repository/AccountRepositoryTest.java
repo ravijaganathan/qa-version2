@@ -21,21 +21,23 @@ public class AccountRepositoryTest {
     AccountRepository accountRepository;
 
     ChallengeTestUtils challengeTestUtils;
+    List<Account> accountList;
 
     @Before
     public void setup(){
         challengeTestUtils = new ChallengeTestUtils();
+//        accountList.removeAll(accountList);
     }
 
     @Test
     public void empty_findAllAccount_Test() throws NoSuchMethodException {
-        List<Account> accountList = (List<Account>) accountRepository.findAll();
+        accountList = (List<Account>) accountRepository.findAll();
         assertThat(accountList).hasSize(0);
     }
 
     @Test
     public void empty_AddAccount_Test() throws NoSuchMethodException {
-        List<Account> accountList = (List<Account>) accountRepository.findAll();
+        accountList = (List<Account>) accountRepository.findAll();
         assertThat(accountList).hasSize(0);
         accountRepository.save(new Account());
         List<Account> newAccountList = (List<Account>) accountRepository.findAll();
@@ -44,7 +46,7 @@ public class AccountRepositoryTest {
 
     @Test
     public void AddAccount_Test(){
-        List<Account> accountList = (List<Account>) accountRepository.findAll();
+        accountList = (List<Account>) accountRepository.findAll();
         assertThat(accountList).hasSize(0);
 
         accountRepository.save(challengeTestUtils.getFirst_TestAccount());
@@ -54,6 +56,15 @@ public class AccountRepositoryTest {
     }
 
 
+    @Test
+    public void duplicate_AddAccount_Test(){
+        AddAccount_Test();
+        accountRepository.save(challengeTestUtils.getFirst_TestAccount());
+        accountList = (List<Account>) accountRepository.findAll();
+
+        assertThat(accountList).hasSize(2);
+
+    }
 
 
 

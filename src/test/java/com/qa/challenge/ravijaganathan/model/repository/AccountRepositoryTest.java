@@ -10,6 +10,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -61,7 +62,17 @@ public class AccountRepositoryTest {
 
     @Test
     public void DeleteAccount_Test() throws NoSuchMethodException {
-        throw new NoSuchMethodException();
+
+        AddAccount_Test();
+        accountList = (List<Account>) accountRepository.findAll();
+        Optional<Account> deleteAccount = accountList.stream().findFirst();
+
+        assertThat(accountList).hasSize(1);
+        accountRepository.deleteById(deleteAccount.get().getId());
+        accountList = (List<Account>) accountRepository.findAll();
+        assertThat(accountList).hasSize(0);
+
+
     }
 
 

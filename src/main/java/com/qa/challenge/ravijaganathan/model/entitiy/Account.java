@@ -1,27 +1,25 @@
 package com.qa.challenge.ravijaganathan.model.entitiy;
 
-import lombok.Getter;
-import lombok.Setter;
-import org.hibernate.annotations.Generated;
+import lombok.Data;
 
 import javax.persistence.*;
 
 
 @Entity
-@Getter @Setter
+@Data
 public class Account {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    public Long id;
 
     @Column(name = "FIRST_NAME")
-    String firstName;
+    public String firstName;
 
     @Column(name = "LAST_NAME")
-    String lastName;
+    public String lastName;
 
     @Column(name = "ACCOUNT_NUMBER")
-    String AccountNumber;
+    public String AccountNumber;
 
 }

@@ -1,6 +1,7 @@
 package com.qa.challenge.ravijaganathan.ut.model.repository;
 
-import com.qa.challenge.ravijaganathan.ut.model.entitiy.Account;
+import com.qa.challenge.ravijaganathan.model.entitiy.Account;
+import com.qa.challenge.ravijaganathan.model.repository.AccountRepository;
 import com.qa.challenge.ravijaganathan.utils.ChallengeTestUtils;
 import org.junit.Before;
 import org.junit.Test;

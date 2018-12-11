@@ -20,13 +20,18 @@ public class AccountRepositoryTest {
     AccountRepository accountRepository;
 
     @Test
-    public void findAllAccount_Test() throws NoSuchMethodException {
+    public void empty_findAllAccount_Test() throws NoSuchMethodException {
         List<Account> accountList = (List<Account>) accountRepository.findAll();
         assertThat(accountList).hasSize(0);
     }
 
     @Test
-    public void AddAccount_Test() throws NoSuchMethodException {
-        throw new NoSuchMethodException();
+    public void empty_AddAccount_Test() throws NoSuchMethodException {
+        List<Account> accountList = (List<Account>) accountRepository.findAll();
+        assertThat(accountList).hasSize(0);
+
+        accountRepository.save(new Account());
+        List<Account> newAccountList = (List<Account>) accountRepository.findAll();
+        assertThat(newAccountList).hasSize(1);
     }
 }

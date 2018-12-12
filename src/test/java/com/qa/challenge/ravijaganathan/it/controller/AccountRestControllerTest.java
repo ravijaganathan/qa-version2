@@ -18,12 +18,34 @@ public class AccountRestControllerTest {
 
     @Test
     public void createAccount_test(){
-        Account account = new Account();
-        account.setFirstName("John");
-        account.setLastName("Doe");
-        account.setAccountNumber("1234");
-        assertThat(accountService.addAccount(account)).isEqualTo(account);
+        Account firstAccount = new Account();
+        firstAccount.setFirstName("John");
+        firstAccount.setLastName("Doe");
+        firstAccount.setAccountNumber("1234");
+
+
+        assertThat(accountService.addAccount(firstAccount)).isEqualTo(firstAccount);
+
+        Account secondAccount = new Account();
+        secondAccount.setFirstName("Jane");
+        secondAccount.setLastName("Doe");
+        secondAccount.setAccountNumber("1235");
+        accountService.addAccount(secondAccount);
+        assertThat(accountService.addAccount(secondAccount)).isEqualTo(secondAccount);
+
+        Account thirdAccount = new Account();
+        thirdAccount.setFirstName("Jim");
+        thirdAccount.setLastName("Tailor");
+        thirdAccount.setAccountNumber("1236");
+        accountService.addAccount(thirdAccount);
+
+
+        assertThat(accountService.addAccount(thirdAccount)).isEqualTo(thirdAccount);
+
     }
+
+
+
 
 
 }

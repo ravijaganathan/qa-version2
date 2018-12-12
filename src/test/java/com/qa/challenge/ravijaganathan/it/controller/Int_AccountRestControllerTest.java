@@ -13,12 +13,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class AccountRestControllerTest {
+public class Int_AccountRestControllerTest {
     @Autowired
     AccountService accountService;
 
 
-    
+    @Before
+    public void setup(){
+        accountService.deleteAll();
+    }
 
     @Test
     public void createAccount_test(){
@@ -51,20 +54,25 @@ public class AccountRestControllerTest {
 
     @Test
     public void findAllAccounts_Test() throws NoSuchMethodException {
+        createAccount_test();
         assertThat(accountService.getAllAccounts()).hasSize(3);
     }
 
 
     @Test
     public void addAdditional() throws NoSuchMethodException {
+        createAccount_test();
         Account fourthAccount = new Account();
         fourthAccount.setFirstName("Steven");
         fourthAccount.setLastName("Doe");
         fourthAccount.setAccountNumber("1238");
         accountService.addAccount(fourthAccount);
         assertThat(accountService.getAllAccounts()).hasSize(4);
-
     }
+
+
+
+
 
 
 

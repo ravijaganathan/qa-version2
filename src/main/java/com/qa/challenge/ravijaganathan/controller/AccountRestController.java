@@ -40,7 +40,7 @@ public class AccountRestController {
 
 
 
-    class ResponseMessage{
+    public class ResponseMessage{
         String message;
 
         public String getMessage() {

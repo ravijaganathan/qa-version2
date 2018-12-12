@@ -20,7 +20,7 @@ public class Int_AccountRestControllerTest {
     AccountService accountService;
 
     @Autowired
-    AccountRestController.ResponseMessage responseMessage
+    AccountRestController.ResponseMessage responseMessage;
 
     @Before
     public void setup(){

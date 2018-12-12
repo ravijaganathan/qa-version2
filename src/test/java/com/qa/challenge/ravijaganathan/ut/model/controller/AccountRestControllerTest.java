@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -17,8 +18,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest
@@ -59,7 +60,17 @@ public class AccountRestControllerTest {
 
     @Test
     public void deleteAccount_controller_test() throws NoSuchMethodException,Exception {
-        throw new NoSuchMethodException();
-    }
 
+
+            MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders
+                    .delete("/account-project/rest/account/json/1")
+                    .contentType(MediaType.APPLICATION_JSON))
+                    .andReturn();
+
+        Mockito.verify(accountService, times(1))
+                .deleteAccount((long)1);
+
+
+        }
 }
+

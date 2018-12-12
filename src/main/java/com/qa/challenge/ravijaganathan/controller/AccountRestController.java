@@ -5,7 +5,6 @@ import com.qa.challenge.ravijaganathan.model.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.PostConstruct;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,30 +13,6 @@ public class AccountRestController {
 
     @Autowired
     AccountService accountService;
-
-    @PostConstruct
-    public void init() {
-        Account firstAccount = new Account();
-        firstAccount.setFirstName("John");
-        firstAccount.setLastName("Doe");
-        firstAccount.setAccountNumber("1234");
-
-        accountService.addAccount(firstAccount);
-
-
-        Account secondAccount = new Account();
-        secondAccount.setFirstName("Jane");
-        secondAccount.setLastName("Doe");
-        secondAccount.setAccountNumber("1235");
-        accountService.addAccount(secondAccount);
-
-
-        Account thirdAccount = new Account();
-        thirdAccount.setFirstName("Jim");
-        thirdAccount.setLastName("Tailor");
-        thirdAccount.setAccountNumber("1236");
-        accountService.addAccount(thirdAccount);
-    }
 
     @GetMapping("/account-project/rest/account/json")
     List<Account> findAllAccount() {

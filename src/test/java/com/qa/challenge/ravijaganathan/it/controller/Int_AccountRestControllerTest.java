@@ -1,7 +1,9 @@
 package com.qa.challenge.ravijaganathan.it.controller;
 
+import com.qa.challenge.ravijaganathan.controller.AccountRestController;
 import com.qa.challenge.ravijaganathan.model.entitiy.Account;
 import com.qa.challenge.ravijaganathan.model.service.AccountService;
+import com.qa.challenge.ravijaganathan.model.service.AccountService.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,6 +19,8 @@ public class Int_AccountRestControllerTest {
     @Autowired
     AccountService accountService;
 
+    @Autowired
+    AccountRestController.ResponseMessage responseMessage
 
     @Before
     public void setup(){
@@ -67,7 +71,9 @@ public class Int_AccountRestControllerTest {
         fourthAccount.setLastName("Doe");
         fourthAccount.setAccountNumber("1238");
         accountService.addAccount(fourthAccount);
+
         assertThat(accountService.getAllAccounts()).hasSize(4);
+
     }
 
     @Test

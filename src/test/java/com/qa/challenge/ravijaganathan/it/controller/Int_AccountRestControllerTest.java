@@ -72,7 +72,10 @@ public class Int_AccountRestControllerTest {
 
     @Test
     public void deleteAccount() throws NoSuchMethodException {
-        throw new NoSuchMethodException();
+        addAdditional();
+        Long deleteId = accountService.getAllAccounts().stream().findFirst().map(e->e.getId()).get();
+        accountService.deleteAccount(deleteId);
+        assertThat(accountService.getAllAccounts()).hasSize(3);
     }
 
 

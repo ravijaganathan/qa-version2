@@ -49,4 +49,10 @@ public class AccountServiceTest {
         accountService.deleteAccount((long) 1);
         verify(accountRepository,times(1)).deleteById((long)1);
     }
+
+    @Test
+    public void findAllAccount() throws NoSuchMethodException {
+        throw new NoSuchMethodException();
+    }
+
 }

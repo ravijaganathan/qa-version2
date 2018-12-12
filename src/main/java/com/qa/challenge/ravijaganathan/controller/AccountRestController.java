@@ -48,9 +48,6 @@ public class AccountRestController {
         }
 
         public ResponseMessage() {}
-        public ResponseMessage(String message) {
-            this.message = message;
-        }
 
         public void setMessage(String message) {
             this.message = message;

@@ -64,11 +64,14 @@ public class AccountRestControllerTest {
     }
 
 
+    @Test
+    public void add_duplicate_account_test() throws NoSuchMethodException {
+        throw new NoSuchMethodException();
+    }
+
 
     @Test
     public void deleteAccount_controller_test() throws NoSuchMethodException,Exception {
-
-
             MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders
                     .delete("/account-project/rest/account/json/1")
                     .contentType(MediaType.APPLICATION_JSON))

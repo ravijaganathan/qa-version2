@@ -45,6 +45,11 @@ public class AccountRestControllerTest {
     }
 
 
+    @Test
+    public void findAllAccounts_Test() throws NoSuchMethodException {
+        throw new NoSuchMethodException();
+
+    }
 
 
 

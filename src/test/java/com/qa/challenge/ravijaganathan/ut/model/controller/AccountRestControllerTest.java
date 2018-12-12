@@ -66,7 +66,25 @@ public class AccountRestControllerTest {
 
     @Test
     public void add_duplicate_account_test() throws NoSuchMethodException {
-        throw new NoSuchMethodException();
+        try {
+            createAccount_controller_test();
+            when(accountService.addAccount(mockedTestData.getDummyAccount())).thenReturn(mockedTestData.getDummyAccount());
+
+            Gson gson = new Gson();
+            String json = gson.toJson(mockedTestData.getDummyAccount());
+            Account intestAccount = gson.fromJson(json,Account.class);
+            String inputJson = gson.toJson(intestAccount);
+
+            MvcResult mvcResult = mockMvc.perform(
+                    MockMvcRequestBuilders.post("/account-project/rest/account/json")
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .content(inputJson))
+                    .andReturn();
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 

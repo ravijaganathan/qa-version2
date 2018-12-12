@@ -47,7 +47,8 @@ public class AccountRestControllerTest {
 
     @Test
     public void findAllAccounts_Test() throws NoSuchMethodException {
-        throw new NoSuchMethodException();
+        createAccount_test();
+        assertThat(accountService.getAllAccounts()).hasSize(3);
 
     }
 

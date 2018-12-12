@@ -10,16 +10,16 @@ import javax.persistence.*;
 public class Account {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     public Long id;
 
-    @Column(name = "FIRST_NAME")
+    @Column(name = "FIRSTNAME")
     public String firstName;
 
-    @Column(name = "LAST_NAME")
+    @Column(name = "LASTNAME")
     public String lastName;
 
-    @Column(name = "ACCOUNT_NUMBER",unique = false)
+    @Column(name = "ACCOUNTNUMBER",unique = false)
     public String AccountNumber;
 
 }

@@ -70,7 +70,10 @@ public class Int_AccountRestControllerTest {
         assertThat(accountService.getAllAccounts()).hasSize(4);
     }
 
-
+    @Test
+    public void deleteAccount() throws NoSuchMethodException {
+        throw new NoSuchMethodException();
+    }
 
 
 

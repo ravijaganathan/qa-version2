@@ -19,7 +19,7 @@ public class Account {
     @Column(name = "LAST_NAME")
     public String lastName;
 
-    @Column(name = "ACCOUNT_NUMBER",unique = true)
+    @Column(name = "ACCOUNT_NUMBER",unique = false)
     public String AccountNumber;
 
 }

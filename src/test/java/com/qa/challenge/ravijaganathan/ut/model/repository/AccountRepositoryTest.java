@@ -28,7 +28,7 @@ public class AccountRepositoryTest {
     @Before
     public void setup(){
         challengeTestUtils = new ChallengeTestUtils();
-//        accountList.removeAll(accountList);
+        accountRepository.deleteAll();
     }
 
     @Test

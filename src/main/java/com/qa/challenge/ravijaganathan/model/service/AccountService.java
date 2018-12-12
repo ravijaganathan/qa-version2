@@ -31,5 +31,8 @@ public class AccountService {
          accountRepository.deleteById(id);
     }
 
+    public void deleteAll(){
+        accountRepository.deleteAll();
+    }
 
 }

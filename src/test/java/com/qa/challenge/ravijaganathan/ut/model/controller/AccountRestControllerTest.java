@@ -12,11 +12,16 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.mockito.Mockito.*;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -34,6 +39,8 @@ public class AccountRestControllerTest {
     @Captor
     ArgumentCaptor<Account> accountArgumentCaptor;
 
+    @Captor
+    ArgumentCaptor<List<Account>> findAllCaptor;
 
     MockedTestData mockedTestData = new MockedTestData() ;
 
@@ -69,8 +76,25 @@ public class AccountRestControllerTest {
 
         Mockito.verify(accountService, times(1))
                 .deleteAccount((long)1);
-
-
         }
+
+    @Test
+    public void findAllAccount() throws NoSuchMethodException,Exception {
+
+        List<Account> persons = new ArrayList<Account>();
+        when(accountService.getAllAccounts()).thenReturn(mockedTestData.getAccountList());
+        ArgumentCaptor<Sort> sortArgument = ArgumentCaptor.forClass(Sort.class);
+
+        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders
+                                .get( "/account-project/rest/account/json"))
+                                .andExpect(MockMvcResultMatchers.status().isOk())
+                                .andReturn();
+
+
+        verify(accountService).getAllAccounts();
+
+    }
+
+
 }
 

@@ -5,6 +5,7 @@ import com.qa.challenge.ravijaganathan.model.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -12,6 +13,12 @@ public class AccountRestController {
 
     @Autowired
     AccountService accountService;
+
+
+    @GetMapping("/account-project/rest/account/json")
+    List<Account> findAllAccount() {
+        return accountService.getAllAccounts();
+    }
 
 
     @PostMapping("/account-project/rest/account/json")

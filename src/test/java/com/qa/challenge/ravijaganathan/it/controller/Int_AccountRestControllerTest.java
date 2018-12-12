@@ -19,7 +19,7 @@ public class Int_AccountRestControllerTest {
     @Autowired
     AccountService accountService;
 
-    @Autowired
+
     AccountRestController.ResponseMessage responseMessage;
 
     @Before
@@ -83,6 +83,8 @@ public class Int_AccountRestControllerTest {
         accountService.deleteAccount(deleteId);
         assertThat(accountService.getAllAccounts()).hasSize(3);
     }
+
+
 
 
 
